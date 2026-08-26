@@ -3,6 +3,9 @@
 =begin
   0) Read over the assignment requirements
   1) First lets establish our classes and their roles
+      + Controller Module
+        - Handles game start, turns and game end
+        - Loops
       + UI Class
         - Handles all printing and prompting
         - Should only be called from controller
@@ -10,22 +13,12 @@
         - Handles the game logic
         - Tracks the board state
         - Determines win
-      + Controller Class
-        - Handles game start, turns and game end
-        - Loops
       + Player Class
         - Should have a unicode char associated (red or yellow)
         - Should also have a name associated as well
   2) Tests
-      + Test Player
-        - Player#init
-          - Returns nil
-          - The unicode char and the name != nil
       + Test Controller
-        - Controller#play
-          - Entry
-          - Should return nil
-        - Controller#init
+        - Controller#init_players
           - Returns two players
           - Prompts for player info
 
