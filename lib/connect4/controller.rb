@@ -23,8 +23,13 @@ module Controller
   end
 
   def play
+    board = Board.new
     ui = UI.new
     players = init_players(ui)
+
+    loop do
+
+    end
   end
 end
 
