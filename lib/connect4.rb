@@ -17,10 +17,8 @@
         - Should have a unicode char associated (red or yellow)
         - Should also have a name associated as well
   2) Tests
-      + Test Controller
-        - Controller#init_players
-          - Returns two players
-          - Prompts for player info
+      + Test UI Class
+        - UI#
 
 ~~~ REMEMBER ~~~
 
