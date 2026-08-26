@@ -17,8 +17,7 @@
         - Should have a unicode char associated (red or yellow)
         - Should also have a name associated as well
   2) Tests
-      + Test UI Class
-        - UI#
+
 
 ~~~ REMEMBER ~~~
 
