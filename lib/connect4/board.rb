@@ -63,10 +63,19 @@ class Board
     false
   end
 
+  POSSIBLE_DIAGS = [
+    # Sloped Up
+    # Sloped Down
+  ]
+
   def diagonal_win?(player)
     # Get it working dirty first
-    # Iterate the grid for each vert arr
-    # For each sub_indx of each vert arr
-    #   - Do an ascending if indx <=2 (zero-based)
+    # Make pregenerated indexes
+    #   - Do ascending checks if y<=2 and x<=4(zero-based)
+    #   - Do descending checks if y>=3 and x<=4(zero-based)
+    #   - Make both of these extra functions
+    # The checks work as follows
+    #   - check y+1 y+2...
+    #   - check x-1 x-2/x+1 x+2...
   end
 end
