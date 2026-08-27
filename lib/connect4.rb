@@ -18,6 +18,8 @@
         - Should also have a name associated as well
   2) Tests
 
+~~~ TODO ~~~
+  + Get the submit option
 
 ~~~ REMEMBER ~~~
 

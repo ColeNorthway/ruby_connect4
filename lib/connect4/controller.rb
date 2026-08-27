@@ -27,9 +27,19 @@ module Controller
     ui = UI.new
     players = init_players(ui)
 
-    loop do
-
+    42.times do
+      # print board
+      # get coord for p1
+      # submit
+      # check won
+      #
+      # print board
+      # get coord for p2
+      # submit
+      # check won
     end
+
+    ui.game_draw
   end
 end
 

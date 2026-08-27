@@ -38,6 +38,10 @@ class UI
     end
   end
 
+  def game_draw
+    puts "The game is a draw..."
+  end
+
   private
 
   def check_coord_bounds(coords)
@@ -48,9 +52,9 @@ class UI
         return false
       else
         if i == 0
-          return false unless (c >= 1 && c <= 7)
+          return false unless (c >= 1 && c <= 7) # X coordinate bounds
         else
-          return false unless (c >= 1 && c <= 6)
+          return false unless (c >= 1 && c <= 6) # Y Coordinate bounds
         end
       end
     end
