@@ -1,0 +1,8 @@
+AllCops:
+  TargetRubyVersion: 4.0
+Lint/SuppressedException:
+  Enabled: false
+Style/RedundantBegin:
+  Enabled: false
+Style/RedundantSelf:
+  Enabled: false
