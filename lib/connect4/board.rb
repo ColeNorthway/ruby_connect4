@@ -6,18 +6,22 @@ require_relative 'player'
 #   - Can decide winners
 #   - Tracks state as grid
 class Board
-  attr_reader :coordinates
+  attr_reader :coordinates, :grid
 
   def initialize
     @coordinates = []
-    @grid = Array.new(7) { Array.new(6) }
+    @grid = Array.new(7) { Array.new(6) { ' ' } }
+  end
+
+  def get_y(x)
+    x -= 1
+    @grid[x].index(' ') + 1
   end
 
   def submit(player, coord)
-    @coordinates.push(coord)
-    coords = coord.split(',')
-    x = coords[0].to_i
-    y = coords[1].to_i
+    @coordinates.push(coord[0].to_s)
+    x = coord[0]
+    y = coord[1]
     @grid[x - 1][y - 1] = player.char
   end
 
@@ -29,8 +33,7 @@ class Board
 
   private
 
-  attr_accessor :grid
-  attr_writer :coordinates
+  attr_writer :coordinates, :grid
 
   def horizontal_win?(player)
     @grid[0].length.times do |i|

@@ -40,11 +40,11 @@ RSpec.describe UI do
   end
 
   describe '#player_coord' do
-    it 'bool returned' do
+    it 'Array returned' do
       player = Player.new("\u{1F534}", 'rupert')
       board = Board.new
       ui = UI.new
-      allow(ui).to receive(:gets).and_return("    1,1    \n")
+      allow(ui).to receive(:gets).and_return("    1    \n")
 
       res = ui.player_coord(player, board)
       expect(res).to be_an(Array)
@@ -54,7 +54,7 @@ RSpec.describe UI do
       player = Player.new("\u{1F534}", 'rupert')
       board = Board.new
       ui = UI.new
-      allow(ui).to receive(:gets).and_return("    1,1    \n")
+      allow(ui).to receive(:gets).and_return("    1    \n")
 
       res = ui.player_coord(player, board)
       expect(res[0]).to be_an(Integer)
@@ -64,7 +64,7 @@ RSpec.describe UI do
       player = Player.new("\u{1F534}", 'rupert')
       board = Board.new
       ui = UI.new
-      allow(ui).to receive(:gets).and_return("    1,1    \n")
+      allow(ui).to receive(:gets).and_return("    1    \n")
 
       res = ui.player_coord(player, board)
       expect(res[1]).to be_an(Integer)

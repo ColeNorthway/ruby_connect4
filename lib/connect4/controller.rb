@@ -28,18 +28,24 @@ module Controller
     players = init_players(ui)
 
     42.times do
-      # print board
-      # get coord for p1
-      # submit
-      # check won
-      #
-      # print board
-      # get coord for p2
-      # submit
-      # check won
+      return if do_round(board, ui, players[0])
+      return if do_round(board, ui, players[1])
     end
 
     ui.game_draw
+  end
+
+  def do_round(board, ui, player)
+    board.print
+    coord = ui.player_coord(player, board)
+    board.submit(player, coord)
+
+    if board.won?(player)
+      ui.game_won(player)
+      return true
+    end
+
+    false
   end
 end
 

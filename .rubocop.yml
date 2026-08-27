@@ -10,3 +10,7 @@ Style/TrailingCommaInArrayLiteral:
   Enabled: false
 Layout/EmptyLineAfterGuardClause:
   Enabled: false
+Style/BlockComments:
+  Enabled: false
+Naming/MethodParameterName:
+  Enabled: false

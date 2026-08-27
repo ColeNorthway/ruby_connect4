@@ -19,7 +19,8 @@
   2) Tests
 
 ~~~ TODO ~~~
-  + Get the submit option
+  + Get board printable
+  + Edit coordinate validation to include gravity
 
 ~~~ REMEMBER ~~~
 
