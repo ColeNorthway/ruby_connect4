@@ -14,3 +14,5 @@ Style/BlockComments:
   Enabled: false
 Naming/MethodParameterName:
   Enabled: false
+Style/ColonMethodCall:
+  Enabled: false

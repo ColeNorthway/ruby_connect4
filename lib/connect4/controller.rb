@@ -36,7 +36,7 @@ module Controller
   end
 
   def do_round(board, ui, player)
-    board.print
+    ui.print_board(board)
     coord = ui.player_coord(player, board)
     board.submit(player, coord)
 

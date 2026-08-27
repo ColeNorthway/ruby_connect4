@@ -1,26 +1,25 @@
 # frozen_string_literal: true
 
-=begin
-  0) Read over the assignment requirements
-  1) First lets establish our classes and their roles
-      + Controller Module
-        - Handles game start, turns and game end
-        - Loops
-      + UI Class
-        - Handles all printing and prompting
-        - Should only be called from controller
-      + Board Class
-        - Handles the game logic
-        - Tracks the board state
-        - Determines win
-      + Player Class
-        - Should have a unicode char associated (red or yellow)
-        - Should also have a name associated as well
-  2) Tests
+require_relative 'connect4/controller'
 
-~~~ TODO ~~~
-  + Get board printable
-  + Edit coordinate validation to include gravity
+Controller::play
+
+=begin
+  Read over the assignment requirements
+  First lets establish our classes and their roles
+   + Controller Module
+     - Handles game start, turns and game end
+     - Loops
+   + UI Class
+     - Handles all printing and prompting
+     - Should only be called from controller
+   + Board Class
+     - Handles the game logic
+     - Tracks the board state
+     - Determines win
+   + Player Class
+     - Should have a unicode char associated (red or yellow)
+     - Should also have a name associated as well
 
 ~~~ REMEMBER ~~~
 
