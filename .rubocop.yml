@@ -6,3 +6,7 @@ Style/RedundantBegin:
   Enabled: false
 Style/RedundantSelf:
   Enabled: false
+Style/TrailingCommaInArrayLiteral:
+  Enabled: false
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false

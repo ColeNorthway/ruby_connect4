@@ -24,7 +24,7 @@ class Board
   def won?(player)
     return true if self.horizontal_win?(player)
     return true if self.vertical_win?(player)
-    # Call internal for diagonal
+    self.diagonal_win?(player)
   end
 
   private
@@ -63,19 +63,39 @@ class Board
     false
   end
 
-  POSSIBLE_DIAGS = [
-    # Sloped Up
-    # Sloped Down
-  ]
+  # Possible Sloped Up (y<=2 && x<=3 ~ Zero-Based)
+  POSSIBLE_UP_DIAGS = [
+    [0, 0], [1, 0], [2, 0], [3, 0],
+    [0, 1], [1, 1], [2, 1], [3, 1],
+    [0, 2], [1, 2], [2, 2], [3, 2],
+  ].freeze
+
+  # Possible Sloped Down (y>=3 && x<=3 ~ Zero-Based)
+  POSSIBLE_DOWN_DIAGS = [
+    [0, 3], [1, 3], [2, 3], [3, 3],
+    [0, 4], [1, 4], [2, 4], [3, 4],
+    [0, 5], [1, 5], [2, 5], [3, 5],
+  ].freeze
 
   def diagonal_win?(player)
-    # Get it working dirty first
-    # Make pregenerated indexes
-    #   - Do ascending checks if y<=2 and x<=4(zero-based)
-    #   - Do descending checks if y>=3 and x<=4(zero-based)
-    #   - Make both of these extra functions
-    # The checks work as follows
-    #   - check y+1 y+2...
-    #   - check x-1 x-2/x+1 x+2...
+    POSSIBLE_UP_DIAGS.each do |coord|
+      if (@grid[coord[0]][coord[1]]         == @grid[coord[0] + 1][coord[1] + 1]) &&
+         (@grid[coord[0] + 2][coord[1] + 2] == @grid[coord[0] + 3][coord[1] + 3]) &&
+         (@grid[coord[0]][coord[1]]         == @grid[coord[0] + 3][coord[1] + 3]) &&
+         (@grid[coord[0]][coord[1]]         == player.char)
+        return true
+      end
+    end
+
+    POSSIBLE_DOWN_DIAGS.each do |coord|
+      if (@grid[coord[0]][coord[1]]         == @grid[coord[0] + 1][coord[1] - 1]) &&
+         (@grid[coord[0] + 2][coord[1] - 2] == @grid[coord[0] + 3][coord[1] - 3]) &&
+         (@grid[coord[0]][coord[1]]         == @grid[coord[0] + 3][coord[1] - 3]) &&
+         (@grid[coord[0]][coord[1]]         == player.char)
+        return true
+      end
+    end
+
+    false
   end
 end

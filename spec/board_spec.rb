@@ -45,7 +45,7 @@ RSpec.describe Board do
       expect(board.won?(player)).to eql(true)
     end
 
-    it "None of those win" do
+    it 'None of those win' do
       board = Board.new
       player = Player.new("\u{1F534}", 'rupert')
       board.submit(player, '1,1')
